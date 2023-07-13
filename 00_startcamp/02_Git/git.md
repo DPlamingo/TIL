@@ -140,5 +140,10 @@ $ code ~/.gifconfig
 ```bash
 $ git push origin master
 # 원격저장소로 이동
+$ git remote add {remote_nickname} {remote_url}
+# 원격저장소에 등록
+$ git clone github_url
+# 최초로 내려 받을 때
 ```
 - Bitbucket
+
