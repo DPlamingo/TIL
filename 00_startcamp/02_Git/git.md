@@ -137,4 +137,8 @@ $ code ~/.gifconfig
 ### 원격 저장소
 - Git Lab (SSAFY 공식)
 - Git Hub (Open소스, Public)
+```bash
+$ git push origin master
+# 원격저장소로 이동
+```
 - Bitbucket
