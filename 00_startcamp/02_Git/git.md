@@ -138,12 +138,16 @@ $ code ~/.gifconfig
 - Git Lab (SSAFY 공식)
 - Git Hub (Open소스, Public)
 ```bash
+$ git remote -v
+# 저장 위치 확인
 $ git push origin master
 # 원격저장소로 이동
 $ git remote add {remote_nickname} {remote_url}
 # 원격저장소에 등록
 $ git clone github_url
 # 최초로 내려 받을 때
+$ git pull origin master
+# 저장소에 있는 최신버전 확인
 ```
 - Bitbucket
 
