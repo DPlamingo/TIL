@@ -5,3 +5,5 @@
 4. Advanced 등급까지 속도 상관 안씀
 5. Java 공부의 경우, Python 공부가 충분하다면 Java 공부
 6. Java가 국내한정 많이 사용하고 있는 언어
+
+7.test
