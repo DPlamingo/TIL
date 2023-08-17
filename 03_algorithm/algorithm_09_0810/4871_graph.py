@@ -27,15 +27,15 @@ for tc in range(1, 1+T):
     def path(graph, start, end):
         visited = set()
         stack = [start]
-        list_node = []
-        while stack:
-            node = stack.pop()
-            list_node.append(node)
-            if node == end:
+        # list_node = []
+        while stack: # 스택 돌리고
+            node = stack.pop() # 스택 없에고
+            # list_node.append(node)
+            if node == end: # 도착했나?
                 return True
-            if node not in visited:
-                visited.add(node)
-                stack.extend(sorted(graph[node], reverse = True))
+            if node not in visited: # 왔던 곳이냐?
+                visited.add(node) # 안왔으면, 들렸다고 적어놓고
+                stack.extend(sorted(graph[node], reverse = True)) # 스택에 추가
 
         return False
             # print(list_node)
@@ -49,3 +49,25 @@ for tc in range(1, 1+T):
 
 
     # print(arr)
+
+    def dic_function(list_arr):
+        graph = {}
+        for i range(len()):
+            key, value = list_arr[i][0], list_arr[i][1]
+            if key not in list_arr:
+                graph[key] = []
+            if value not in list_arr:
+                graph[value] = []
+            graph[key].append(value)
+        return graph
+
+    def stack_function(graph, start, end):
+        visited = set()
+        stack = [start]
+        while stack:
+            node = stack.pop()
+            if node == end:
+                return True
+            if node not in visited:
+                visited.add(node)
+                stack.extend(sorted())
