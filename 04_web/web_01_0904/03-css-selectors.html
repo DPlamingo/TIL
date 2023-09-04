@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      color: burlywood;
+    }
+
+    /* 텍스트 색을 정하고 나면 변경이 안됨 */
+    h1 {
+      color: red;
+      font-size: 30px;
+    }
+    
+    h2 {
+      color: aqua;
+    }
+
+    .green {
+      color: green;
+    } 
+    /* 코드를 재사용 가능하며, 대부분 사용 */
+
+    #purple {
+      color: purple;
+    }
+    /* 한개에만 적용 할때, id 사용(잘 안씀') */
+
+    .green > span {
+      font-size: 50px;
+    }
+    /* 자식 결합자 */
+
+    .green li {
+      color: brown;
+    }
+    /* 자손 결합자 */
+  </style>
+  <!-- css 문법 -->
+</head>
+
+<body>
+  <h1 class="green">Heading</h1>
+  <h2>선택자</h2>
+  <h3>연습</h3>
+  <h4>반가워요</h4>
+  <p id="purple">과목 목록</p>
+  <ul class="green">
+    <li>파이썬</li>
+    <li>알고리즘</li>
+    <li>웹
+      <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>PYTHON</li>
+      </ol>
+    </li>
+  </ul>
+  <p class="green">Lorem, <span>ipsum</span> dolor.</p>
+</body>
+
+</html>
