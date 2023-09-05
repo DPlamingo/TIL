@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 500px;
+      padding: 20px;
+      border: 2px solid black;
+      background-color: lightgray
+    }
+
+    .card-header {
+      /* border: 2px solid red; */
+      height: 500px;
+      background-color: yellowgreen;
+      position: relative
+    }
+
+    .card-header img {
+      width: 100%;
+    }
+
+    .card-header p {
+      /* 부모 요소들 중에 position이 relative 인 대상을 찾아감 */
+      position: absolute;
+      bottom: 0;
+      height: 20px;
+      line-height: 22px;
+      text-align: center;
+      width: 100%;
+      font-size: 20px;
+      margin: 0;
+      background-color: rgb(238, 202, 130);
+    }
+
+    .card-content {
+      border: 2px solid lightgray;
+      background-color: lightgray;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card-header">
+      <img src="profile.jpg" alt="Profile Image">
+      <p>Name</p>
+    </div>
+    <p class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci unde officiis ad nostrum. Laboriosam mollitia similique provident fuga tenetur saepe sit, amet eaque neque eius quaerat expedita ea illum veniam.</p>
+  </div>
+</body>
+</html>
