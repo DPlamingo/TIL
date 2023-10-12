@@ -1,17 +1,62 @@
 # 2115. 벌꿀 채취
 
-T = int(input())
-for tc in range(1, 1+T):
-    N, M, C = map(int, input().split())
-    honey = [list(map(int, input().split())) for _ in range(N)]
+def dfs(n, cnt, sm, ci, cj):
+    global mx
+    if cnt > C:   # 합친 꿀의 양이 C보다 큰경우
+        return
+    if n == M:
+        mx = max(mx, sm)
+        return
 
-    # 1차원 배열 하나 만들어서 허니들의 합을 쫙 배열함
-    lst = []
+    dfs(n+1, cnt+arr[ci][cj+n], sm+arr[ci][cj+n]**2, ci, cj)
+    dfs(n+1, cnt, sm, ci, cj)
+
+def dfs(n, cnt, sm, ci, cj):
+    global mx
+    if cnt > C:  # 가지치기
+        return
+    if n == M:
+        mx = max(mx, sm)
+        return
+
+    dfs(n+1, cnt+arr[ci][cj+n], sm+arr[ci][cj+n]**2, ci, cj)
+    dfs(n+1, cnt, sm, ci, cj)
+
+def dfs(n, cnt, sm, ci, cj):
+    global mx
+    if n > C:
+        return
+
+    if n == M:
+        mx = max(mx, sm)
+        return
+
+    dfs(n+1, cnt+arr[ci][cj+n], sm+arr[ci][cj+n]**2, ci, cj)
+    dfs(n+1, cnt, sm, ci, cj)
+
+
+
+
+T = int(input())
+for test_case in range(1,T+1):
+    N,M,C = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+
+    ans = mx = sm1 = 0
+    mem =[[0]*N for _ in range(N)]
+    # [0] 각 위치의 가능한 최대값을 한 번 저장
+    # 동일한 위치에서 dfs를 호출해서 중복연산 방지
     for i in range(N):
-        for j in range(N-M):
-            cnt = 0
-            if sum(honey[i][j:j+M]) <= 13:
-                for k in range(M):
-                    cnt += honey[i][j+k]**2
-                lst.append(cnt)
-            else:
+        for j in range(N-M+1):
+            mx = 0
+            dfs(0, 0, 0, i, j)
+            mem[i][j]=mx
+
+		# memoization
+    # [1] 가능한 모든 시작위치(일꾼 1, 2)
+    for i1 in range(N):
+        for j1 in range(N-M+1):
+            for i2 in range(i1, N):
+                sj = j1+M if i1 == i2 else 0
+                for j2 in range(sj, N-M+1):
+                    ans = max(ans, mem[i1][j1]+mem[i2][j2])
