@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .serializers import Article
+from .models import Article
 
 
-class ArticleSerializer(serializers):
+class ArticleSerializer(serializers. ModelSerializer):
 
     class Meta:
         model = Article
