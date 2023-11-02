@@ -1,4 +1,4 @@
-1. 순서
+### 구성
   1) MongoDB Atlas 클러스터를 프로비저닝합니다.
 
   2) 그 안에 데이터베이스와 컬렉션을 만들고 초기 데이터 세트를 로드합니다.
@@ -35,6 +35,7 @@ collection : sensor
 
 7. 이후 만들어진 DB에서 Insert Doc 항목에서 실제 Data를 기입해 준다.
 for ex) 
+```Json
 {
     "Formatted Date":{"$date":{"$numberLong":"1143842400000"}},
     "Summary":"Partly Cloudy",
@@ -49,7 +50,8 @@ for ex)
     "Pressure (millibars)":{"$numberDouble":"1015.13"},
     "Daily Summary":"Partly cloudy throughout the day."
 }
-
+```
+```Json
 {
    "FormattedDate":{"$date":{"$numberLong":"1143910800000"}},
    "Summary":"Mostly Cloudy",
@@ -64,7 +66,7 @@ for ex)
    "Pressure (millibars)":{"$numberDouble":"1015.83"},
    "Daily Summary":"Partly cloudy throughout the day."
 }
-
+```
 
 8. 이후 Data API를 만들어 준다.
 Select data sources 에서 Sandbox cluster를 적용 시킨후 만들어줌. Data API Access : Read and Write
@@ -119,6 +121,8 @@ Runtime, Build, connections and security settings	: Runtime: Memory allocated - 
 12. Runtime : Python 3.9 or 3.10 수정
   - 메인 안의 url 주소나 api key 경우 이전에 기록해둔 값을 지정.
   1) main.py ;  
+
+```python
 import base64
 import functions_framework
 # Triggered from a message on a Cloud Pub/Sub topic.
@@ -142,11 +146,13 @@ def hello_pubsub(cloud_event):
  print(payload)
  response = requests.request("POST", url, headers=headers, data=payload)
  return response
+```
 
   2) requirement.txt ;
 functions-framework==3.*
 requests
 
+![Alt text](Line.png)
 
 13. Testing
 - Cloud Function의 'sensor-data-generator' 클릭 후, Triggers, data 등 항목 확인 
